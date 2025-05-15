@@ -1,0 +1,1 @@
+"klass widjet för api data"
