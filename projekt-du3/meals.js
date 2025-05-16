@@ -67,7 +67,7 @@ serve(async (req) => {
 
   // 📄 style.css (om du använder den)
   if (pathname === "/style.css") {
-    const css = await Deno.readTextFile("./client/style.css");
+    const css = await Deno.readTextFile("./server/style.css");
     return new Response(css, {
       headers: { "Content-Type": "text/css" },
     });
