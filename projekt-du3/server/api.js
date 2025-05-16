@@ -1,4 +1,4 @@
-import { fetchRandomMeal } from "./fetchMeals.js";
+/*import { fetchRandomMeal } from "./fetchMeals.js";
 import { saveMeal, getAllMeals } from "./database.js";
 
 export async function handleApiRequest(req) {
@@ -22,4 +22,4 @@ export async function handleApiRequest(req) {
   }
 
   return new Response("❌ Not found", { status: 404 });
-}
+}*/
