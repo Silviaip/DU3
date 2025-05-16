@@ -1,7 +1,9 @@
+/* style.css */
+
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #ffeedd, #ffc499);
-  color: #333333;
+  background: #fff6e5;
+  color: #333;
   margin: 0 auto;
   padding: 20px;
   max-width: 800px;
@@ -9,73 +11,72 @@ body {
 
 h1 {
   font-size: 24px;
-  color: #cc3300;
+  color: #d84315;
   text-align: center;
   margin-bottom: 20px;
 }
 
+.buttons {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 button {
-  background: linear-gradient(135deg, #e53935, #fb8c00);
-  color: #ffffff;
+  background: #e53935;
+  color: #fff;
   border: none;
   padding: 10px 20px;
   font-size: 16px;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin: 0 10px;
+  transition: background 0.2s ease;
 }
 
 button:hover {
-  opacity: 0.9;
+  background: #ff8a65;
 }
 
 .meal, .drink {
-  background: #fff9e6;
-  border-left: 6px solid #ffb300;
+  background: #ffffff;
+  border-left: 4px solid #ffb300;
   padding: 15px;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .meal h2, .drink h2 {
   margin-top: 0;
-  color: #e65100;
+  color: #bf360c;
+  font-size: 20px;
 }
 
 .meal img, .drink img {
   width: 100%;
   border-radius: 4px;
   margin: 10px 0;
-  height:500px;
 }
 
 .meal p, .drink p {
+  margin: 8px 0;
   line-height: 1.4;
-  margin: 10px 0;
-}
-
-.meal h3, .drink h3 {
-  margin-top: 20px;
-  color: #bf360c;
 }
 
 .meal ul, .drink ul {
-  list-style: disc inside;
   margin: 10px 0;
-  padding-left: 15px;
+  padding-left: 20px;
 }
 
 .meal li, .drink li {
-  margin: 5px 0;
+  margin-bottom: 5px;
 }
 
-/* Enkelt mobilstöd */
+/* Enkel mobilanpassning */
 @media (max-width: 600px) {
-  h1 {
-    font-size: 20px;
-  }
   button {
+    display: block;
     width: 100%;
+    margin: 10px 0;
   }
 }
