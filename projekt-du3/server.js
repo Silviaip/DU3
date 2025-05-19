@@ -1,5 +1,5 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import { loadRatings, addRating } from "./server/ratings.js";
+import { loadRatings, addRating } from "./client/ratings.js";
 
 
 const RANDOM_MEAL_URL    = "https://www.themealdb.com/api/json/v1/1/random.php";
