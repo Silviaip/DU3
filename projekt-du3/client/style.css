@@ -16,11 +16,6 @@ h1 {
   margin-bottom: 20px;
 }
 
-.buttons {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
 button {
   background: #e53935;
   color: #fff;
@@ -30,7 +25,7 @@ button {
   border-radius: 6px;
   cursor: pointer;
   margin: 0 10px;
-  transition: background 0.2s ease;
+ 
 }
 
 button:hover {
