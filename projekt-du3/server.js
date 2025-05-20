@@ -1,5 +1,16 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*", 
+  "Access-Control-Allow-Methods": "GET, POST, DELETE, PUT, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type"
+};
+
+if (req.method === "OPTIONS") {
+  return new Response(null, {
+    headers: corsHeaders
+  });
+}
 
 const RANDOM_MEAL_URL    = "https://www.themealdb.com/api/json/v1/1/random.php";
 const LOOKUP_MEAL_URL    = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
@@ -30,7 +41,7 @@ serve(async (req) => {
   if (pathname === "/meal") {
     const meal = await getRandomMealDetails();
     return new Response(JSON.stringify(meal), {
-      headers: { "Content-Type": "application/json" },
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   }
 
@@ -38,7 +49,7 @@ serve(async (req) => {
   if (pathname === "/drink") {
     const drink = await getRandomDrink();
     return new Response(JSON.stringify(drink), {
-      headers: { "Content-Type": "application/json" },
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   }
 
@@ -46,7 +57,7 @@ serve(async (req) => {
   if (pathname === "/") {
     const html = await Deno.readTextFile(templatePath);
     return new Response(html, {
-      headers: { "Content-Type": "text/html; charset=utf-8" },
+      headers: { ...corsHeaders, "Content-Type": "text/html; charset=utf-8" },
     });
   }
 
@@ -54,7 +65,7 @@ serve(async (req) => {
   if (pathname === "/mealsfetch.js") {
     const js = await Deno.readTextFile("./client/mealsfetch.js");
     return new Response(js, {
-      headers: { "Content-Type": "application/javascript" },
+      headers: { ...corsHeaders, "Content-Type": "application/javascript" },
     });
   }
 
@@ -62,7 +73,7 @@ serve(async (req) => {
   if (pathname === "/drinks.js") {
     const js = await Deno.readTextFile("./client/drinks.js");
     return new Response(js, {
-      headers: { "Content-Type": "application/javascript" },
+      headers: {...corsHeaders, "Content-Type": "application/javascript" },
     });
   }
     /*ratings get metod och post
@@ -81,9 +92,12 @@ serve(async (req) => {
   if (pathname === "/style.css") {
     const css = await Deno.readTextFile("./client/style.css");
     return new Response(css, {
-      headers: { "Content-Type": "text/css" },
+      headers: {...corsHeaders, "Content-Type": "text/css" },
     });
   }
 
-  return new Response("404 Not Found", { status: 404 });
+  return new Response("404 Not Found", { 
+    status: 404, 
+    headers: corsHeaders
+  });
 }, { port: 8080 });
