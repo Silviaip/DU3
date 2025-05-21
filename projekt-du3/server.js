@@ -97,6 +97,18 @@ const templatePath       = "./client/index.html";
 const drinkRatingsPath   = "drink_list_with_ratings.json";
 const mealRatingsPath    = "meal_list_with_ratings.json";
 
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*", 
+  "Access-Control-Allow-Methods": "GET, POST, DELETE, PUT, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type"
+};
+
+if (req.method === "OPTIONS") {
+  return new Response(null, {
+    headers: corsHeaders
+  });
+}
+
 // Hämtar random måltid
 async function getRandomMealDetails() {
   const res       = await fetch(RANDOM_MEAL_URL);
