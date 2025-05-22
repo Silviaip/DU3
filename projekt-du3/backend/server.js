@@ -13,7 +13,7 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "Content-Type"
 };
 
-
+// kommentar
 
 // API-funktioner
 async function getRandomMealDetails() {
