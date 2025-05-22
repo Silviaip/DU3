@@ -6,6 +6,14 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <div>
+    <p>Username:</p> <input type="text" id="username_input">
+    <p>Password:</p> <input type="text" id="password_input">
+    <p id="message_text"></p>
+    <button id="register_button">Create account</button> <button id="log_in_button">Log in</button>
+  </div>
+
   <h1>Vad ska jag laga idag?</h1>
   <button id="fetchMealBtn">Visa måltid</button>
   <div id="meal" class="meal"></div>
@@ -28,6 +36,7 @@
 
 
   <!-- JavaScript-moduler -->
+   <script src="user.js"></script>
   <script type="module" src="mealsfetch.js"></script>
   <script type="module" src="drinks.js"></script>
   <script type="module" src="top_drinks.js"></script>
