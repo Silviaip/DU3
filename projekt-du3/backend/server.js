@@ -13,17 +13,6 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "Content-Type"
 };
 
-if (pathname.startsWith("/frontend/")) {
-  try {
-    const js = await Deno.readTextFile(Deno.cwd() + "/frontend/" + file);
-
-      return new Response(js, {
-          headers: { ...corsHeaders, "Content-Type": "application/javascript" },
-      });
-  } catch {
-      return new Response("Filen hittades inte", { status: 404 });
-  }
-}
 
 
 // API-funktioner
@@ -184,8 +173,7 @@ serve(async (req) => {
   for (const file of jsFiles) {
     if (pathname === `/${file}`) {
       try {
-        const js = await Deno.readTextFile(Deno.cwd() + "/frontend/" + file);
-
+        const js = await Deno.readTextFile(`../frontend/${file}`);
         return new Response(js, {
           headers: { ...corsHeaders, "Content-Type": "application/javascript" },
         });
