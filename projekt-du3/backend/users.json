@@ -1,6 +1,11 @@
 [
   {
+<<<<<<< Updated upstream
     "username": "Maja",
     "password": "Majaspassword"
+=======
+    "username": "hej",
+    "password": "då"
+>>>>>>> Stashed changes
   }
 ]
