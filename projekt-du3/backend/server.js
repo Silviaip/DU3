@@ -314,6 +314,7 @@ serve(async (req) => {
 
   // Serve CSS
   if (pathname === "/style.css") {
+<<<<<<< Updated upstream
   try {
     const css = await Deno.readTextFile("../frontend/style.css");
     return new Response(css, {
@@ -322,6 +323,17 @@ serve(async (req) => {
   } catch (err) {
     console.error("Error reading style.css:", err);
     return new Response("style.css not found", { status: 404 });
+=======
+    try {
+      const css = await Deno.readTextFile("../frontend/style.css");
+      return new Response(css, {
+        headers: { ...corsHeaders, "Content-Type": "text/css" },
+      });
+    } catch (err) {
+      console.error("Error reading style.css:", err);
+      return new Response("style.css not found", { status: 404 });
+    }
+>>>>>>> Stashed changes
   }
 }
 
