@@ -12,10 +12,36 @@
 <body>
  
     <header>
-      <h1><img src="Bilder/logo.png"></h1>
-      <p>Discover delicious meals and drinks with ratings!</p>
-      <img src="Bilder/Skärmbild 2025-05-27 134747.png" alt="Appens logotyp eller skärmbild">
+      <div id="headers_container">
+        <div id="left_header">
+          <h1>Food and Drinks Explorer</h1>
+          <p>Discover delicious meals and drinks with ratings!</p>
+        </div>
+        <div id="right_header">
+          <button id="account_button">Your account</button>
+        </div>
+      </div>
     </header>
+
+    <!-- Dropdown after login -->
+<div id="account_dropdown" class="hidden">
+  <button id="dropdown_button">Account ▼</button>
+  <div id="dropdown_menu" class="dropdown hidden">
+    <a href="#">Favourites</a>
+    <a href="#" id="logout_btn">Log out</a>
+  </div>
+</div>
+
+<!-- Dropdown after login -->
+<div id="account_dropdown" class="hidden">
+  <button id="dropdown_button">Account ▼</button>
+  <div id="dropdown_menu" class="dropdown hidden">
+    <a href="#">Favourites</a>
+    <a href="#" id="logout_btn">Log out</a>
+  </div>
+</div>
+
+
   
     <div class="tabs">
       <div class="tab active" data-tab="random">Random Selector</div>
@@ -144,7 +170,6 @@
     <script type="module" src="top_drinks.js"></script>
     <script type="module" src="top-ratings.js"></script>
     <script type="module" src="user.js"></script>
-    <script type="module" src="combine.js"></script>
 
 </body>
 </html>

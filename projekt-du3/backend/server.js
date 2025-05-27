@@ -290,7 +290,7 @@ serve(async (req) => {
     "top_meals.js",
     "top_drinks.js",
     "index.js",
-    "combine.js",
+   
     "user.js"
   ];
 
@@ -312,6 +312,27 @@ serve(async (req) => {
     }
   }
   // Serve CSS
+  if (pathname.startsWith("/images/")) {
+  try {
+    const img = await Deno.readFile(`../frontend${pathname}`);
+    let contentType = "image/png"; // Default MIME-typ
+
+    // Bestäm MIME-typen baserat på filändelsen
+    if (pathname.endsWith(".jpg") || pathname.endsWith(".jpeg")) {
+      contentType = "image/jpeg";
+    } else if (pathname.endsWith(".svg")) {
+      contentType = "image/svg+xml";
+    }
+
+    return new Response(img, {
+      headers: { ...corsHeaders, "Content-Type": contentType },
+    });
+  } catch (err) {
+    console.error(`Error reading image: ${pathname}`, err);
+    return new Response("Image not found", { status: 404 });
+  }
+}
+
   if (pathname === "/style.css") {
     try {
       const css = await Deno.readTextFile("../frontend/style.css");
