@@ -1078,14 +1078,15 @@
     }
   },
   {
+    "type": "meal",
     "idMeal": "52895",
     "name": "English Breakfast",
-    "rating": 4.7,
-    "votes": 362,
+    "rating": 4,
+    "votes": 1,
     "review": {
-      "reviewer": "Nora M.",
-      "date": "2025-01-28",
-      "text": "Otroligt god! En ny favorit."
+      "reviewer": "You",
+      "date": "2025-05-27",
+      "text": "uue"
     }
   },
   {
