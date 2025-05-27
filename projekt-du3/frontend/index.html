@@ -4,13 +4,16 @@
   <meta charset="UTF-8" />
   <title>Food & Drink Explorer</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Additional styles for the review input areas */
+
+  </style>
 </head>
 <body>
  
     <header>
       <h1><img src="Bilder/logo.png"></h1>
       <p>Discover delicious meals and drinks with ratings!</p>
-
       <img src="Bilder/Skärmbild 2025-05-27 134747.png" alt="Appens logotyp eller skärmbild">
     </header>
   
@@ -41,6 +44,7 @@
           <div id="meal-rating-display" class="rating-display">
             <div class="stars">Not rated yet</div>
           </div>
+          
           <div class="rating-form">
             <p>Leave your rating:</p>
             <div class="star-rating" id="meal-stars">
@@ -50,7 +54,23 @@
               <span data-rating="4">★</span>
               <span data-rating="5">★</span>
             </div>
-            <button id="submit-meal-rating" disabled>Submit Rating</button>
+          </div>
+
+          <!-- New review input section for meals -->
+          <div class="review-input-section" id="meal-review-inputs">
+            <h4>Add Your Review</h4>
+            
+            <div class="form-group">
+              <label for="meal-reviewer-name">Your Name:</label>
+              <input type="text" id="meal-reviewer-name" placeholder="Enter your name">
+            </div>
+            
+            <div class="form-group">
+              <label for="meal-review-text">Your Review (optional):</label>
+              <textarea id="meal-review-text" placeholder="Tell us what you thought about this meal..."></textarea>
+            </div>
+            
+            <button id="submit-meal-rating" class="review-submit-btn" disabled>Submit Review</button>
           </div>
         </div>
         
@@ -59,6 +79,7 @@
           <div id="drink-rating-display" class="rating-display">
             <div class="stars">Not rated yet</div>
           </div>
+          
           <div class="rating-form">
             <p>Leave your rating:</p>
             <div class="star-rating" id="drink-stars">
@@ -68,7 +89,23 @@
               <span data-rating="4">★</span>
               <span data-rating="5">★</span>
             </div>
-            <button id="submit-drink-rating" disabled>Submit Rating</button>
+          </div>
+
+          <!-- New review input section for drinks -->
+          <div class="review-input-section" id="drink-review-inputs">
+            <h4>Add Your Review</h4>
+            
+            <div class="form-group">
+              <label for="drink-reviewer-name">Your Name:</label>
+              <input type="text" id="drink-reviewer-name" placeholder="Enter your name">
+            </div>
+            
+            <div class="form-group">
+              <label for="drink-review-text">Your Review (optional):</label>
+              <textarea id="drink-review-text" placeholder="Tell us what you thought about this drink..."></textarea>
+            </div>
+            
+            <button id="submit-drink-rating" class="review-submit-btn" disabled>Submit Review</button>
           </div>
         </div>
       </div>
@@ -94,34 +131,6 @@
 
     <!-- Error display container -->
     <div id="error" class="error-message"></div>
-
-    <!-- Review form for manual review submission (hidden by default) -->
-    <div id="reviewForm" class="review-form" style="display: none;">
-      <h3>Add Your Review</h3>
-      <form>
-        <div class="form-group">
-          <label for="reviewer">Your Name:</label>
-          <input type="text" id="reviewer" required>
-        </div>
-        <div class="form-group">
-          <label for="rating">Rating (1-5):</label>
-          <select id="rating" required>
-            <option value="">Select Rating</option>
-            <option value="1">1 Star</option>
-            <option value="2">2 Stars</option>
-            <option value="3">3 Stars</option>
-            <option value="4">4 Stars</option>
-            <option value="5">5 Stars</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="reviewText">Your Review:</label>
-          <textarea id="reviewText" rows="4" required></textarea>
-        </div>
-        <button type="submit">Submit Review</button>
-        <button type="button" onclick="this.parentElement.parentElement.style.display='none'">Cancel</button>
-      </form>
-    </div>
 
     <!-- Load scripts in correct order -->
     <!-- Core functionality first -->
