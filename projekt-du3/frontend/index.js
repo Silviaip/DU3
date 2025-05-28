@@ -11,6 +11,8 @@ let selectedMealRating = 0;
 let selectedDrinkRating = 0;
 
 document.addEventListener('DOMContentLoaded', function() {
+    
+
     console.log('Food & Drink Explorer loaded!');
     
     // Tab functionality
@@ -24,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Setup meal and drink fetching with review integration
     setupItemFetching();
+
+    
 });
 
 // Tab system setup
