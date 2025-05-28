@@ -290,7 +290,7 @@ serve(async (req) => {
     "top_meals.js",
     "top_drinks.js",
     "index.js",
-    "combine.js",
+   
     "user.js"
   ];
 
