@@ -3423,14 +3423,15 @@
     }
   },
   {
+    "type": "drink",
     "idDrink": "12093",
     "name": "Rum Sour",
-    "rating": 1.7,
-    "votes": 446,
+    "rating": 4,
+    "votes": 1,
     "review": {
-      "reviewer": "Karin R.",
-      "date": "2023-08-29",
-      "text": "Usch, vad var det här?"
+      "reviewer": "You",
+      "date": "2025-05-28",
+      "text": "rated"
     }
   },
   {
