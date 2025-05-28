@@ -1,175 +1,215 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
   <meta charset="UTF-8" />
   <title>Food & Drink Explorer</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     /* Additional styles for the review input areas */
-
   </style>
 </head>
+
 <body>
- 
-    <header>
-      <div id="headers_container">
-        <div id="left_header">
-          <h1>Food and Drinks Explorer</h1>
-          <p>Discover delicious meals and drinks with ratings!</p>
-        </div>
-        <div id="right_header">
-          <button id="account_button">Your account</button>
-        </div>
-      </div>
-    </header>
 
-    <!-- Dropdown after login -->
-<div id="account_dropdown" class="hidden">
-  <button id="dropdown_button">Account ▼</button>
-  <div id="dropdown_menu" class="dropdown hidden">
-    <a href="#">Favourites</a>
-    <a href="#" id="logout_btn">Log out</a>
+  <header>
+    <div id="headers_container">
+      <div id="left_header">
+        <h1>Food and Drinks Explorer</h1>
+        <p>Discover delicious meals and drinks with ratings!</p>
+      </div>
+      <div id="right_header">
+        <button id="account_button">Your account</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dropdown after login -->
+  <div id="account_dropdown" class="hidden">
+    <button id="dropdown_button">Account ▼</button>
+    <div id="dropdown_menu" class="dropdown hidden">
+      <a href="#">Favourites</a>
+      <a href="#" id="logout_btn">Log out</a>
+    </div>
   </div>
-</div>
 
-<!-- Dropdown after login -->
-<div id="account_dropdown" class="hidden">
-  <button id="dropdown_button">Account ▼</button>
-  <div id="dropdown_menu" class="dropdown hidden">
-    <a href="#">Favourites</a>
-    <a href="#" id="logout_btn">Log out</a>
+  <!-- Dropdown after login -->
+  <div id="account_dropdown" class="hidden">
+    <button id="dropdown_button">Account ▼</button>
+    <div id="dropdown_menu" class="dropdown hidden">
+      <a href="#">Favourites</a>
+      <a href="#" id="logout_btn">Log out</a>
+    </div>
   </div>
-</div>
 
 
-  
-    <div class="tabs">
-      <div class="tab active" data-tab="random">Random Selector</div>
-      <div class="tab" data-tab="top-rated">Top Rated</div>
+
+  <div class="tabs">
+    <div class="tab active" data-tab="random">Random Selector</div>
+    <div class="tab" data-tab="top-rated">Top Rated</div>
+  </div>
+
+  <div id="random-tab" class="tab-content active">
+    <div class="button-container">
+      <button id="fetchMealBtn">Get Random Meal</button>
+      <button id="nightBtn">Get Random Drink</button>
     </div>
-  
-    <div id="random-tab" class="tab-content active">
-      <div class="button-container">
-        <button id="fetchMealBtn">Get Random Meal</button>
-        <button id="nightBtn">Get Random Drink</button>
-      </div>
-  
-      <div class="container">
-        <div class="card" id="meal">
-          <h2>Click the button to get a random meal</h2>
-        </div>
-        
-        <div class="card" id="drink">
-          <h2>Click the button to get a random drink</h2>
-        </div>
-      </div>
-  
-      <div class="container" style="margin-top: 20px;">
-        <div class="card" id="meal-rating">
-          <h3>Rate this Meal</h3>
-          <div id="meal-rating-display" class="rating-display">
-            <div class="stars">Not rated yet</div>
-          </div>
-          
-          <div class="rating-form">
-            <p>Leave your rating:</p>
-            <div class="star-rating" id="meal-stars">
-              <span data-rating="1">★</span>
-              <span data-rating="2">★</span>
-              <span data-rating="3">★</span>
-              <span data-rating="4">★</span>
-              <span data-rating="5">★</span>
-            </div>
-          </div>
 
-          <!-- New review input section for meals -->
-          <div class="review-input-section" id="meal-review-inputs">
-            <h4>Add Your Review</h4>
-            
-            <div class="form-group">
-              <label for="meal-reviewer-name">Your Name:</label>
-              <input type="text" id="meal-reviewer-name" placeholder="Enter your name">
-            </div>
-            
-            <div class="form-group">
-              <label for="meal-review-text">Your Review (optional):</label>
-              <textarea id="meal-review-text" placeholder="Tell us what you thought about this meal..."></textarea>
-            </div>
-            
-            <button id="submit-meal-rating" class="review-submit-btn" disabled>Submit Review</button>
-          </div>
-        </div>
-        
-        <div class="card" id="drink-rating">
-          <h3>Rate this Drink</h3>
-          <div id="drink-rating-display" class="rating-display">
-            <div class="stars">Not rated yet</div>
-          </div>
-          
-          <div class="rating-form">
-            <p>Leave your rating:</p>
-            <div class="star-rating" id="drink-stars">
-              <span data-rating="1">★</span>
-              <span data-rating="2">★</span>
-              <span data-rating="3">★</span>
-              <span data-rating="4">★</span>
-              <span data-rating="5">★</span>
-            </div>
-          </div>
-
-          <!-- New review input section for drinks -->
-          <div class="review-input-section" id="drink-review-inputs">
-            <h4>Add Your Review</h4>
-            
-            <div class="form-group">
-              <label for="drink-reviewer-name">Your Name:</label>
-              <input type="text" id="drink-reviewer-name" placeholder="Enter your name">
-            </div>
-            
-            <div class="form-group">
-              <label for="drink-review-text">Your Review (optional):</label>
-              <textarea id="drink-review-text" placeholder="Tell us what you thought about this drink..."></textarea>
-            </div>
-            
-            <button id="submit-drink-rating" class="review-submit-btn" disabled>Submit Review</button>
-          </div>
-        </div>
+    <div class="container">
+      <div class="card" id="meal">
+        <h2>Click the button to get a random meal</h2>
       </div>
-    </div>
-  
-    <div id="top-rated-tab" class="tab-content">
-      <div class="container">
-        <div class="card">
-          <h2>Top 10 Meals</h2>
-          <ol id="top-meals" class="top-list">
-            <li>Loading top meals...</li>
-          </ol>
-        </div>
-        
-        <div class="card">
-          <h2>Top 10 Drinks</h2>
-          <ol id="top-drinks" class="top-list">
-            <li>Loading top drinks...</li>
-          </ol>
-        </div>
+
+      <div class="card" id="drink">
+        <h2>Click the button to get a random drink</h2>
       </div>
     </div>
 
-    <!-- Error display container -->
-    <div id="error" class="error-message"></div>
+    <div class="container" style="margin-top: 20px;">
+      <div class="card" id="meal-rating">
+        <h3>Rate this Meal</h3>
+        <div id="meal-rating-display" class="rating-display">
+          <div class="stars">Not rated yet</div>
+        </div>
 
-    <!-- Load scripts in correct order -->
-    <!-- Core functionality first -->
-    <script type="module" src="index.js"></script>
+        <div class="rating-form">
+          <p>Leave your rating:</p>
+          <div class="star-rating" id="meal-stars">
+            <span data-rating="1">★</span>
+            <span data-rating="2">★</span>
+            <span data-rating="3">★</span>
+            <span data-rating="4">★</span>
+            <span data-rating="5">★</span>
+          </div>
+        </div>
+
+        <!-- New review input section for meals -->
+        <div class="review-input-section" id="meal-review-inputs">
+          <h4>Add Your Review</h4>
+
+          <div class="form-group">
+            <label for="meal-reviewer-name">Your Name:</label>
+            <input type="text" id="meal-reviewer-name" placeholder="Enter your name">
+          </div>
+
+          <div class="form-group">
+            <label for="meal-review-text">Your Review (optional):</label>
+            <textarea id="meal-review-text" placeholder="Tell us what you thought about this meal..."></textarea>
+          </div>
+
+          <button id="submit-meal-rating" class="review-submit-btn">Submit Review</button>
+        </div>
+      </div>
+
+      <div class="card" id="drink-rating">
+        <h3>Rate this Drink</h3>
+        <div id="drink-rating-display" class="rating-display">
+          <div class="stars">Not rated yet</div>
+        </div>
+
+        <div class="rating-form">
+          <p>Leave your rating:</p>
+          <div class="star-rating" id="drink-stars">
+            <span data-rating="1">★</span>
+            <span data-rating="2">★</span>
+            <span data-rating="3">★</span>
+            <span data-rating="4">★</span>
+            <span data-rating="5">★</span>
+          </div>
+        </div>
+
+        <!-- New review input section for drinks -->
+        <div class="review-input-section" id="drink-review-inputs">
+          <h4>Add Your Review</h4>
+
+          <div class="form-group">
+            <label for="drink-reviewer-name">Your Name:</label>
+            <input type="text" id="drink-reviewer-name" placeholder="Enter your name">
+          </div>
+
+          <div class="form-group">
+            <label for="drink-review-text">Your Review (optional):</label>
+            <textarea id="drink-review-text" placeholder="Tell us what you thought about this drink..."></textarea>
+          </div>
+
+          <button id="submit-drink-rating" class="review-submit-btn" onclick="submitDrinkReviewClicked()">Submit
+            Review</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="top-rated-tab" class="tab-content">
+    <div class="container">
+      <div class="card">
+        <h2>Top 10 Meals</h2>
+        <ol id="top-meals" class="top-list">
+          <li>Loading top meals...</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h2>Top 10 Drinks</h2>
+        <ol id="top-drinks" class="top-list">
+          <li>Loading top drinks...</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Error display container -->
+  <div id="error" class="error-message"></div>
+
+  <!-- Load scripts in correct order -->
+  <!-- Core functionality first -->
+  <script type="module" src="index.js"></script>
+
+  <!-- Individual feature modules -->
+  <script type="module" src="mealsfetch.js"></script>
+  <script type="module" src="drinks.js"></script>
+  <script type="module" src="reviews.js" defer></script>
+  <script type="module" src="top_meals.js"></script>
+  <script type="module" src="top_drinks.js"></script>
+  <script type="module" src="top-ratings.js"></script>
+  <script type="module" src="user.js"></script>
+  <script>
     
-    <!-- Individual feature modules -->
-    <script type="module" src="mealsfetch.js"></script>
-    <script type="module" src="drinks.js"></script>
-    <script type="module" src="reviews.js"></script>
-    <script type="module" src="top_meals.js"></script>
-    <script type="module" src="top_drinks.js"></script>
-    <script type="module" src="top-ratings.js"></script>
-    <script type="module" src="user.js"></script>
+    async function submitDrinkReviewClicked() {
+      
+      const reviewerName = document.getElementById("drink-reviewer-name").value;
+      const description = document.getElementById("drink-review-text").value;
+
+      //Hardcoded - TODO: populate with real value instead
+      const stars = 5;
+      const rating = 9.2;
+      const drinkName = "A Night In Old Mandalay";
+      const drinkID = "17832";
+
+      if (!reviewerName || !stars) {
+        alert("please fill in your name and select stars!");
+      } else {
+
+        const reviewObject = {
+          type: "drink",
+          idDrink: drinkID,
+          name: drinkName,
+          rating: rating,
+          votes: stars,
+          review: {
+            reviewer: reviewerName,
+            date: new Date().toISOString().split("T")[0],
+            text: description,
+          }
+        }
+
+        //TODO send API request to endpoint
+        const response = await postReview(reviewObject);
+      }
+    }
+  </script>
+
+
 
 </body>
+
 </html>

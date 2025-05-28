@@ -55,14 +55,15 @@
     }
   },
   {
+    "type": "drink",
     "idDrink": "17837",
     "name": "Adam",
-    "rating": 3,
-    "votes": 154,
+    "rating": 4,
+    "votes": 1,
     "review": {
-      "reviewer": "Daniel Z.",
-      "date": "2024-07-06",
-      "text": "Kanske inte min favorit, men funkar."
+      "reviewer": "You",
+      "date": "2025-05-28",
+      "text": "hhhh"
     }
   },
   {
@@ -154,14 +155,15 @@
     }
   },
   {
+    "type": "drink",
     "idDrink": "11046",
     "name": "Applecar",
-    "rating": 3.5,
-    "votes": 304,
+    "rating": 5,
+    "votes": 1,
     "review": {
-      "reviewer": "Anna K.",
-      "date": "2025-01-22",
-      "text": "Helt okej – varken toppen eller botten."
+      "reviewer": "You",
+      "date": "2025-05-28",
+      "text": "hej"
     }
   },
   {
@@ -4642,14 +4644,15 @@
     }
   },
   {
+    "type": "drink",
     "idDrink": "14594",
     "name": "Zizi Coin-coin",
-    "rating": 1.6,
-    "votes": 35,
+    "rating": 3,
+    "votes": 1,
     "review": {
-      "reviewer": "Erik W.",
-      "date": "2025-05-11",
-      "text": "Usch, vad var det här?"
+      "reviewer": "You",
+      "date": "2025-05-28",
+      "text": "ghhg"
     }
   },
   {
@@ -4695,6 +4698,66 @@
       "reviewer": "You",
       "date": "2025-05-27",
       "text": "hejhej"
+    }
+  },
+  {
+    "type": "drink",
+    "idDrink": "14598",
+    "name": "50/50",
+    "rating": 4,
+    "votes": 1,
+    "review": {
+      "reviewer": "You",
+      "date": "2025-05-28",
+      "text": "ooo"
+    }
+  },
+  {
+    "type": "drink",
+    "idDrink": "12710",
+    "name": "Apple Berry Smoothie",
+    "rating": 4,
+    "votes": 1,
+    "review": {
+      "reviewer": "You",
+      "date": "2025-05-28",
+      "text": "kkkk"
+    }
+  },
+  {
+    "type": "drink",
+    "idDrink": "13581",
+    "name": "410 Gone",
+    "rating": 3,
+    "votes": 1,
+    "review": {
+      "reviewer": "You",
+      "date": "2025-05-28",
+      "text": "asdf"
+    }
+  },
+  {
+    "type": "drink",
+    "idDrink": "14272",
+    "name": "Addison Special",
+    "rating": 1,
+    "votes": 1,
+    "review": {
+      "reviewer": "You",
+      "date": "2025-05-28",
+      "text": "testing reviews for addison"
+    }
+  },
+  {
+    "type": "drink",
+    "idDrink": "13940",
+    "name": "69 Special",
+    "rating": 3,
+    "votes": 1,
+    "review": {
+      "reviewer": "You",
+      "date": "2025-05-28",
+      "text": "this is the text in the review area"
     }
   }
 ]

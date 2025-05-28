@@ -393,7 +393,7 @@ function submitMealReview(rating) {
     }
     
     // Get review text
-    const reviewText = prompt('Add a comment for your review (optional):');
+    const reviewText = document.getElementById("meal-review-text").value.trim();
     if (reviewText === null) {
         return; // User cancelled
     }
@@ -458,7 +458,7 @@ function submitDrinkReview(rating) {
     }
     
     // Get review text
-    const reviewText = prompt('Add a comment for your review (optional):');
+    const reviewText = document.getElementById("drink-review-text").value.trim();
     if (reviewText === null) {
         return; // User cancelled
     }
@@ -641,6 +641,16 @@ function populateTopList(listId, items) {
             '<span class="item-rating">' + starsHTML + ' (' + item.rating + ')</span>' +
             '<span class="item-votes">' + item.votes + ' ' + voteText + '</span>';
         
+
+        li.addEventListener('click', () => {
+        console.log("clicked on item");
+
+        //implementera logik för att hämta data från item sedan ta ID och skicka den till ett API request
+        //API URL FÖR att hämta information baseret  på id www.themealdb.com/api/json/v1/1/lookup.php?i=52772
+        //Visa up det på hemsidan
+
+        });
+            
         list.appendChild(li);
     }
 }
