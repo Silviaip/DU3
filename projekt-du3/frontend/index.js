@@ -10,7 +10,6 @@ let currentDrink = null;
 let selectedMealRating = 0;
 let selectedDrinkRating = 0;
 
-let loggedInUser;
 
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -729,7 +728,6 @@ async function setupLoginPopup(){
             for(let user of content){
                 if(user.username == username && user.password == password){
                     modal.remove();
-                    loggedInUser = user; // loggedinuser hade inget värde innan, nu får det värdet av användaren som är inloggad just nu
                 }
             }
         } 
