@@ -683,14 +683,15 @@
     }
   },
   {
+    "type": "meal",
     "idMeal": "52860",
     "name": "Chocolate Raspberry Brownies",
-    "rating": 3.3,
-    "votes": 226,
+    "rating": 4,
+    "votes": 1,
     "review": {
-      "reviewer": "Camilla E.",
-      "date": "2023-12-20",
-      "text": "Neutral upplevelse, varken bra eller dålig."
+      "reviewer": "You",
+      "date": "2025-05-30",
+      "text": "choco"
     }
   },
   {
@@ -2918,14 +2919,15 @@
     }
   },
   {
+    "type": "meal",
     "idMeal": "53028",
     "name": "Shawarma",
-    "rating": 3.1,
-    "votes": 354,
+    "rating": 4,
+    "votes": 1,
     "review": {
-      "reviewer": "Elin B.",
-      "date": "2024-12-07",
-      "text": "Helt okej, men inget jag lagar igen."
+      "reviewer": "You",
+      "date": "2025-05-30",
+      "text": "shawarma"
     }
   },
   {
