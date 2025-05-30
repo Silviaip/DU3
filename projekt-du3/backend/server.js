@@ -138,7 +138,7 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
-   if (req.method === "POST" && pathname === "/user") {
+   if (req.method === "POST" && pathname === "/user") { // eget api
     try {
       const { username, password } = await req.json();
 
@@ -174,7 +174,7 @@ serve(async (req) => {
   }
 
   // Handle POST requests for adding reviews
-  if (req.method === "POST" && pathname === "/add-review") {
+  if (req.method === "POST" && pathname === "/add-review") { // eget api
     try {
       const body = await req.json();
 
@@ -213,7 +213,7 @@ serve(async (req) => {
 
   // API endpoints
 
-  if (pathname === "/get-user") {
+  if (pathname === "/get-user") { // eget api
     const user = await readUsers(); 
     return new Response(JSON.stringify(user), { 
       headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -234,7 +234,7 @@ serve(async (req) => {
     });
   }
 
-  if (pathname === "/top-meals") {
+  if (pathname === "/top-meals") { // eget api 
     const meals = await getMealRatings();
     const topMeals = meals.sort((a, b) =>
       b.rating === a.rating ? b.votes - a.votes : b.rating - a.rating
@@ -244,7 +244,7 @@ serve(async (req) => {
     });
   }
 
-  if (pathname === "/top-drinks") {
+  if (pathname === "/top-drinks") { // eget api
     const drinks = await getDrinkRatings();
     const topDrinks = drinks.sort((a, b) =>
       b.rating === a.rating ? b.votes - a.votes : b.rating - a.rating
@@ -254,14 +254,14 @@ serve(async (req) => {
     });
   }
 
-  if (pathname === "/meal-reviews") {
+  if (pathname === "/meal-reviews") { // eget api 
     const ratings = await getMealRatings();
     return new Response(JSON.stringify(ratings), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   }
 
-  if (pathname === "/drink-reviews") {
+  if (pathname === "/drink-reviews") { // eget api 
     const ratings = await getDrinkRatings();
     return new Response(JSON.stringify(ratings), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -269,7 +269,7 @@ serve(async (req) => {
   }
 
   // New endpoint for all reviews (used by user.js)
-  if (pathname === "/reviews") {
+  if (pathname === "/reviews") { // eget api 
     const allReviews = await getAllReviews();
     return new Response(JSON.stringify(allReviews), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
