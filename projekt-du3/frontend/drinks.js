@@ -13,7 +13,7 @@ document.getElementById("nightBtn").addEventListener("click", async () => {
     // Hitta recension med matchande idDrink
     const review = allRatings.find(r => r.idDrink === drink.idDrink);
 
-    const container = document.getElementById("drink");
+    /*const container = document.getElementById("drink");
     container.innerHTML = `
       <h2>${drink.strDrink}</h2>
       <img src="${drink.strDrinkThumb}" alt="${drink.strDrink}">
@@ -31,4 +31,4 @@ document.getElementById("nightBtn").addEventListener("click", async () => {
   } catch (err) {
     console.error("Kunde inte ladda drink:", err);
   }
-});
+}); */

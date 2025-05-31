@@ -11,14 +11,15 @@
     }
   },
   {
+    "type": "drink",
     "idDrink": "13501",
     "name": "ABC",
-    "rating": 3.3,
-    "votes": 150,
+    "rating": 5,
+    "votes": 1,
     "review": {
-      "reviewer": "Camilla E.",
-      "date": "2024-05-29",
-      "text": "Lite svag i smaken, men ändå god."
+      "reviewer": "You",
+      "date": "2025-05-30",
+      "text": "abc"
     }
   },
   {
@@ -875,14 +876,15 @@
     }
   },
   {
+    "type": "drink",
     "idDrink": "16991",
     "name": "Downshift",
-    "rating": 4.2,
-    "votes": 448,
+    "rating": 4,
+    "votes": 1,
     "review": {
-      "reviewer": "Karin R.",
-      "date": "2024-10-19",
-      "text": "Inte dum alls, riktigt uppfriskande."
+      "reviewer": "You",
+      "date": "2025-05-30",
+      "text": "hejeh"
     }
   },
   {
@@ -1625,14 +1627,15 @@
     }
   },
   {
+    "type": "drink",
     "idDrink": "11419",
     "name": "Gin Swizzle",
-    "rating": 1.4,
-    "votes": 351,
+    "rating": 4,
+    "votes": 1,
     "review": {
-      "reviewer": "Karin R.",
-      "date": "2024-12-08",
-      "text": "Nej tack – den här gick inte ner."
+      "reviewer": "You",
+      "date": "2025-05-30",
+      "text": "gin swizzle"
     }
   },
   {
@@ -2507,14 +2510,15 @@
     }
   },
   {
+    "type": "drink",
     "idDrink": "178335",
     "name": "Lazy Coconut Paloma",
-    "rating": 2.4,
-    "votes": 85,
+    "rating": 5,
+    "votes": 1,
     "review": {
-      "reviewer": "Sebastian H.",
-      "date": "2023-05-28",
-      "text": "Smakerna passade inte riktigt ihop."
+      "reviewer": "You",
+      "date": "2025-05-30",
+      "text": "lazy"
     }
   },
   {
@@ -3277,14 +3281,15 @@
     }
   },
   {
+    "type": "drink",
     "idDrink": "15092",
     "name": "Pysch Vitamin Light",
-    "rating": 3,
-    "votes": 484,
+    "rating": 5,
+    "votes": 1,
     "review": {
-      "reviewer": "Nora M.",
-      "date": "2023-11-30",
-      "text": "Kanske inte min favorit, men funkar."
+      "reviewer": "You",
+      "date": "2025-05-30",
+      "text": "pysch"
     }
   },
   {
@@ -3664,14 +3669,15 @@
     }
   },
   {
+    "type": "drink",
     "idDrink": "17214",
     "name": "Russian Spring Punch",
-    "rating": 1.7,
-    "votes": 111,
+    "rating": 1,
+    "votes": 1,
     "review": {
-      "reviewer": "Sebastian H.",
-      "date": "2023-07-16",
-      "text": "Usch, vad var det här?"
+      "reviewer": "You",
+      "date": "2025-05-30",
+      "text": "russian"
     }
   },
   {
@@ -3818,14 +3824,15 @@
     }
   },
   {
+    "type": "drink",
     "idDrink": "12308",
     "name": "Stone Sour",
-    "rating": 3.5,
-    "votes": 150,
+    "rating": 4,
+    "votes": 1,
     "review": {
-      "reviewer": "Karin R.",
-      "date": "2024-09-24",
-      "text": "Neutral känsla – saknade något extra."
+      "reviewer": "You",
+      "date": "2025-05-30",
+      "text": "russian"
     }
   },
   {
@@ -4039,14 +4046,15 @@
     }
   },
   {
+    "type": "drink",
     "idDrink": "12402",
     "name": "Tom Collins",
-    "rating": 1,
-    "votes": 23,
+    "rating": 4,
+    "votes": 1,
     "review": {
-      "reviewer": "Hugo J.",
-      "date": "2024-09-11",
-      "text": "Skulle inte rekommendera."
+      "reviewer": "You",
+      "date": "2025-05-30",
+      "text": "pysch"
     }
   },
   {
@@ -4193,14 +4201,15 @@
     }
   },
   {
+    "type": "drink",
     "idDrink": "14602",
     "name": "Tequila Surprise",
-    "rating": 2,
-    "votes": 215,
+    "rating": 5,
+    "votes": 1,
     "review": {
-      "reviewer": "Nora M.",
-      "date": "2024-12-06",
-      "text": "För stark och obalanserad."
+      "reviewer": "You",
+      "date": "2025-05-30",
+      "text": "pysch"
     }
   },
   {
@@ -4781,6 +4790,30 @@
       "reviewer": "You",
       "date": "2025-05-30",
       "text": "jkkknff"
+    }
+  },
+  {
+    "type": "drink",
+    "idDrink": "13731",
+    "name": "Amaretto Sour",
+    "rating": 4,
+    "votes": 1,
+    "review": {
+      "reviewer": "You",
+      "date": "2025-05-30",
+      "text": "russian"
+    }
+  },
+  {
+    "type": "drink",
+    "idDrink": "12750",
+    "name": "Spanish chocolate",
+    "rating": 5,
+    "votes": 1,
+    "review": {
+      "reviewer": "You",
+      "date": "2025-05-30",
+      "text": "spanish"
     }
   }
 ]
