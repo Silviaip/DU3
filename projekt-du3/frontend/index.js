@@ -33,9 +33,11 @@ document.addEventListener('DOMContentLoaded', function() {
     setupItemFetching();
 
     //login popup VIKTIGKOD!
-    // setupLoginPopup();
+    setupLoginPopup();
     
 });
+
+
 
 // Tab system setup
 function setupTabs() {

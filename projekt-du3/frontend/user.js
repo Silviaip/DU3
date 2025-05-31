@@ -40,25 +40,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Setup star rating selection functionality
 function setupStarRating(type) {
+  // Hämta alla stjärnor för antingen måltid eller dryck
   const stars = document.querySelectorAll(`#${type}-stars span`);
-  
-  stars.forEach(star => {
-    // Mouseover effect
-    star.addEventListener('mouseover', () => {
-      const rating = parseInt(star.dataset.rating);
-      highlightStars(type, rating);
+
+  stars.forEach(function(star) {
+    // När musen går över en stjärna
+    star.addEventListener('mouseover', function() {
+      let rating = parseInt(star.dataset.rating); // Hämta betyget från stjärnan
+      highlightStars(type, rating); // Uppdatera stjärnorna visuellt
     });
-    
-    // Mouseout - return to selected rating
-    star.addEventListener('mouseout', () => {
-      const selectedRating = type === 'meal' ? selectedMealRating : selectedDrinkRating;
-      highlightStars(type, selectedRating);
+
+    // När musen lämnar stjärnorna
+    star.addEventListener('mouseout', function() {
+      let selectedRating; // Variabel för det valda betyget
+
+      // Bestäm vilken betygsvariabel vi ska använda
+      if (type === 'meal') {
+        selectedRating = selectedMealRating;
+      } else {
+        selectedRating = selectedDrinkRating;
+      }
+
+      highlightStars(type, selectedRating); // Återställ till användarens valda betyg
     });
-    
-    // Click to select rating
-    star.addEventListener('click', () => {
-      const rating = parseInt(star.dataset.rating);
-      
+
+    // När man klickar på en stjärna
+    star.addEventListener('click', function() {
+      let rating = parseInt(star.dataset.rating); // Hämta betyget från stjärnan
+
+      // Spara det valda betyget och aktivera rätt knapp
       if (type === 'meal') {
         selectedMealRating = rating;
         elements.submitMealRatingBtn.disabled = false;
@@ -66,77 +76,53 @@ function setupStarRating(type) {
         selectedDrinkRating = rating;
         elements.submitDrinkRatingBtn.disabled = false;
       }
-      
-      highlightStars(type, rating);
+
+      highlightStars(type, rating); // Uppdatera stjärnorna visuellt
     });
   });
 }
 
+
+
 // Highlight stars based on rating
 function highlightStars(type, rating) {
+  // Hämta alla stjärnor för den valda kategorin (måltid eller dryck)
   const stars = document.querySelectorAll(`#${type}-stars span`);
-  
-  stars.forEach(star => {
-    const starRating = parseInt(star.dataset.rating);
-    star.style.color = starRating <= rating ? '#FFD700' : '#ccc';
+
+  // Gå igenom varje stjärna och ändra färgen beroende på betyget
+  stars.forEach(function(star) {
+    let starRating = parseInt(star.dataset.rating); // Hämta stjärnans betyg
+
+    // Om stjärnans betyg är mindre än eller lika med valt betyg, gör den gul
+    if (starRating <= rating) {
+      star.style.color = '#FFD700'; // Gul färg (guld)
+    } else {
+      star.style.color = '#ccc'; // Grå färg
+    }
   });
 }
 
 // Setup submit buttons
 function setupSubmitButtons() {
   // Submit meal rating
-  elements.submitMealRatingBtn.addEventListener('click', () => {
-    if (!currentMeal || selectedMealRating === 0) return;
+  elements.submitMealRatingBtn.addEventListener('click', function() {
+    if (!currentMeal || selectedMealRating === 0) {
+      return;
+    }
     
     submitReview('meal', currentMeal, selectedMealRating);
   });
-  
+
   // Submit drink rating
-  elements.submitDrinkRatingBtn.addEventListener('click', () => {
-    if (!currentDrink || selectedDrinkRating === 0) return;
+  elements.submitDrinkRatingBtn.addEventListener('click', function() {
+    if (!currentDrink || selectedDrinkRating === 0) {
+      return;
+    }
     
     submitReview('drink', currentDrink, selectedDrinkRating);
   });
 }
 
-// Submit a review for meal or drink
-// function submitReview(type, item, rating) {
-//   // Ask for review text
-//   const reviewText = prompt(`Add your review for ${item.name}:`, '');
-//   if (reviewText === null) return; // User cancelled
-  
-//   // Create review object
-//   const review = {
-//     id: item.idMeal || item.idDrink,
-//     name: item.name || item.strMeal || item.strDrink,
-//     type: type,
-//     rating: rating,
-//     reviewer: 'You',
-//     date: new Date().toISOString().split('T')[0],
-//     review: reviewText || `Rated ${rating} out of 5 stars`
-//   };
-  
-//   // In a real application, we would send this to the server
-//   console.log('Submitting review:', review);
-  
-//   // For now, just display it locally
-//   addReviewToDisplay(type, review);
-  
-//   // Reset rating after submission
-//   if (type === 'meal') {
-//     selectedMealRating = 0;
-//     elements.submitMealRatingBtn.disabled = true;
-//   } else {
-//     selectedDrinkRating = 0;
-//     elements.submitDrinkRatingBtn.disabled = true;
-//   }
-  
-//   // Reset stars display
-//   highlightStars(type, 0);
-  
-//   // Show success message
-//   alert('Your review has been submitted. Thank you!');
-// }
 
 async function submitReview(type, item, rating) {
   const reviewText = prompt(`Add your review for ${item.name}:`, '');
