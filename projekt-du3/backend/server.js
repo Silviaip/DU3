@@ -132,8 +132,20 @@ serve(async (req) => {
   const url = new URL(req.url);
   const pathname = url.pathname;
 
-  console.log(`${req.method} ${pathname}`);
+  if (url.pathname === "/klass.js") {
+    const file = await Deno.readTextFile("./klass.js");
 
+    return new Response(file, {
+      status: 200,
+      headers: {
+        "Content-Type": "application/javascript",
+        "Access-Control-Allow-Origin": "*", // CORS
+      },
+    });
+  }
+
+  console.log(`${req.method} ${pathname}`);
+  
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }

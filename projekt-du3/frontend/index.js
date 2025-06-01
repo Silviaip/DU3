@@ -4,7 +4,7 @@
 import { fetchTopMeals } from './top_meals.js';
 import { fetchTopDrinks } from './top_drinks.js';
 
-import { User } from '../backend/klass';
+import { User } from './klass.js';
 
 const user = new User();
 
@@ -17,7 +17,6 @@ let selectedDrinkRating = 0;
 
 document.addEventListener('DOMContentLoaded', function() {
     
-
     console.log('Food & Drink Explorer loaded!');
     
     // Tab functionality
@@ -669,6 +668,8 @@ function populateTopList(listId, items) {
 }
 
 async function setupLoginPopup(){
+    console.log("login");
+    
     const modal = document.createElement("div");
     modal.classList.add("loginModal");
 

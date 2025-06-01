@@ -13,7 +13,7 @@ document.getElementById("fetchMealBtn").addEventListener("click", async () => {
     // Hitta recension med matchande idMeal
     const review = allRatings.find(r => r.idMeal === meal.idMeal);
 
-    /*const container = document.getElementById("meal");
+    const container = document.getElementById("meal");
     container.innerHTML = `
       <h2>${meal.strMeal}</h2>
       <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
@@ -33,4 +33,4 @@ document.getElementById("fetchMealBtn").addEventListener("click", async () => {
     console.error("Kunde inte ladda måltid:", err);
   }
 });
-*/
+
