@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setupItemFetching();
 
     //login popup viktig kod
-    // setupLoginPopup();
+    setupLoginPopup();
     
 });
 
