@@ -91,10 +91,10 @@
   
 <div class="container" style="margin-top: 20px; display: flex; gap: 20px; flex-wrap: wrap;">
   <!-- Meal Rating Card -->
-  <div class="card" id="meal-review">
+  <div class="card" id="meal-rating">
     <h3>Rate this Meal</h3>
     <div id="meal-rating-display" class="rating-display">
-      <div class="stars"></div>
+      <div class="stars">Not rated yet</div>
     </div>
     <div class="rating-form">
       <p>Leave your rating:</p>
@@ -123,7 +123,7 @@
   </div>
 
   <!-- Drink Rating Card -->
-  <div class="card" id="drink-review">
+  <div class="card" id="drink-rating">
     <h3>Rate this Drink</h3>
     <div id="drink-rating-display" class="rating-display">
       <div class="stars">Not rated yet</div>
@@ -206,41 +206,41 @@
           <textarea id="reviewText" rows="4" required></textarea>
         </div>
         <button type="submit">Submit Review</button>
-        
+        <button type="button" onclick="this.parentElement.parentElement.style.display='none'">Cancel</button>
       </form>
       <script>
-    //   async function submitDrinkReviewClicked() {
+      /*async function submitDrinkReviewClicked() {
       
-    //   const reviewerName = document.getElementById("drink-reviewer-name").value;
-    //   const description = document.getElementById("drink-review-text").value;
+      const reviewerName = document.getElementById("drink-reviewer-name").value;
+      const description = document.getElementById("drink-review-text").value;
 
-    //   //Hardcoded - TODO: populate with real value instead
-    //   const stars = 5;
-    //   const rating = 9.2;
-    //   const drinkName = "A Night In Old Mandalay";
-    //   const drinkID = "17832";
+      //Hardcoded - TODO: populate with real value instead
+      const stars = 5;
+      const rating = 9.2;
+      const drinkName = "A Night In Old Mandalay";
+      const drinkID = "17832";
 
-    //   if (!reviewerName || !stars) {
-    //     alert("please fill in your name and select stars!");
-    //   } else {
+      if (!reviewerName || !stars) {
+        alert("please fill in your name and select stars!");
+      } else {
 
-    //     const reviewObject = {
-    //       type: "drink",
-    //       idDrink: drinkID,
-    //       name: drinkName,
-    //       rating: rating,
-    //       votes: stars,
-    //       review: {
-    //         reviewer: reviewerName,
-    //         date: new Date().toISOString().split("T")[0],
-    //         text: description,
-    //       }
-    //     }
+        const reviewObject = {
+          type: "drink",
+          idDrink: drinkID,
+          name: drinkName,
+          rating: rating,
+          votes: stars,
+          review: {
+            reviewer: reviewerName,
+            date: new Date().toISOString().split("T")[0],
+            text: description,
+          }
+        }
 
-    //     //TODO send API request to endpoint
-    //     const response = await postReview(reviewObject);
-    //   }
-    // }
+        //TODO send API request to endpoint
+        const response = await postReview(reviewObject);
+      }
+    }
   </script>
 
 

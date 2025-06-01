@@ -1368,14 +1368,15 @@
     }
   },
   {
+    "type": "meal",
     "idMeal": "53021",
     "name": "Golabki (cabbage roll)",
-    "rating": 4.3,
-    "votes": 305,
+    "rating": 4,
+    "votes": 1,
     "review": {
-      "reviewer": "Hugo J.",
-      "date": "2024-06-04",
-      "text": "Inte perfekt, men väldigt god."
+      "reviewer": "You",
+      "date": "2025-06-01",
+      "text": "golabki 3"
     }
   },
   {
@@ -2771,14 +2772,15 @@
     }
   },
   {
+    "type": "meal",
     "idMeal": "52950",
     "name": "Szechuan Beef",
-    "rating": 2,
-    "votes": 203,
+    "rating": 5,
+    "votes": 1,
     "review": {
-      "reviewer": "Jonas P.",
-      "date": "2024-11-28",
-      "text": "Smakerna fungerade inte ihop tyvärr."
+      "reviewer": "You",
+      "date": "2025-06-01",
+      "text": "beef"
     }
   },
   {
@@ -3038,14 +3040,15 @@
     }
   },
   {
+    "type": "meal",
     "idMeal": "52845",
     "name": "Turkey Meatloaf",
-    "rating": 1.5,
-    "votes": 172,
+    "rating": 4,
+    "votes": 1,
     "review": {
-      "reviewer": "Daniel Z.",
-      "date": "2023-09-23",
-      "text": "Smaken föll mig inte alls i smaken."
+      "reviewer": "You",
+      "date": "2025-06-01",
+      "text": "turkey meatloaf recension"
     }
   },
   {

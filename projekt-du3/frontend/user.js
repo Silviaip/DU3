@@ -1,4 +1,4 @@
-
+/*
 // funktion som lägger till användare permanent i en json-fil (databas där användarnamn och lösenord sparas)
 
 // user.js - Handles user reviews and ratings
@@ -98,7 +98,7 @@ function setupSubmitButtons() {
     submitReview('drink', currentDrink, selectedDrinkRating);
   });
 }
-
+*/
 // Submit a review for meal or drink
 // function submitReview(type, item, rating) {
 //   // Ask for review text
@@ -138,7 +138,7 @@ function setupSubmitButtons() {
 //   alert('Your review has been submitted. Thank you!');
 // }
 
-async function submitReview(type, item, rating) {
+/*async function submitReview(type, item, rating) {
   const reviewText = prompt(`Add your review for ${item.name}:`, '');
   if (reviewText === null) return;
 

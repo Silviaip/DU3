@@ -182,7 +182,7 @@ serve(async (req) => {
         !body.type || 
         !(body.idMeal || body.idDrink) || 
         !body.name || 
-        typeof body.rating !== "stars" || 
+        typeof body.rating !== "number" || 
         typeof body.votes !== "number" || 
         !body.review || 
         !body.review.reviewer || 

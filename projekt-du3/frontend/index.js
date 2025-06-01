@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Setup meal and drink fetching with review integration
     setupItemFetching();
 
-    //login popup VIKTIGKOD!
-    // setupLoginPopup();
+    //login popup viktig kod
+    //setupLoginPopup();
     
 });
 
