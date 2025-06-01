@@ -2,5 +2,17 @@
   {
     "username": "hej",
     "password": "då"
+  },
+  {
+    "username": "testuser_1748779247543",
+    "password": "testpassword123"
+  },
+  {
+    "username": "testuser_1748779298400",
+    "password": "testpassword123"
+  },
+  {
+    "username": "duplicate_user",
+    "password": "password123"
   }
 ]
