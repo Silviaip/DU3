@@ -1712,14 +1712,15 @@
     }
   },
   {
+    "type": "meal",
     "idMeal": "52808",
     "name": "Lamb Rogan josh",
-    "rating": 3,
-    "votes": 214,
+    "rating": 5,
+    "votes": 1,
     "review": {
-      "reviewer": "Anna K.",
-      "date": "2023-05-26",
-      "text": "Fungerar – men inget speciellt."
+      "reviewer": "You",
+      "date": "2025-06-01",
+      "text": "sdf"
     }
   },
   {

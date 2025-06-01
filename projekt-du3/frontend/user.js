@@ -3,6 +3,8 @@
 
 // user.js - Handles user reviews and ratings
 
+import { user } from '../backend/klass.js'
+
 // Current active items
 let currentMeal = null;
 let currentDrink = null;
@@ -36,6 +38,42 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Attach review loading to the fetch buttons
   attachReviewLoaders();
+});
+
+const user = new User();
+user.login('testuser', '1234'); // Tillfällig inloggning
+
+const fetcher = new RandomFetcher();
+
+
+
+const mealButton = document.getElementById('fetchMealBtn');
+const drinkButton = document.getElementById('nightBtn');
+const mealCard = document.getElementById('meal');
+const drinkCard = document.getElementById('drink');
+
+mealButton.addEventListener('click', async () => {
+  const meal = await fetcher.fetchRandomMeal();
+  if (!meal) return;
+  mealCard.querySelector('h2').textContent = meal.strMeal;
+  currentMeal = {
+    name: meal.strMeal,
+    strMeal: meal.strMeal,
+    idMeal: meal.idMeal
+  };
+  await fetchMealReviews(currentMeal.name);
+});
+
+drinkButton.addEventListener('click', async () => {
+  const drink = await fetcher.fetchRandomDrink();
+  if (!drink) return;
+  drinkCard.querySelector('h2').textContent = drink.strDrink;
+  currentDrink = {
+    name: drink.strDrink,
+    strDrink: drink.strDrink,
+    idDrink: drink.idDrink
+  };
+  await fetchDrinkReviews(currentDrink.name);
 });
 
 // Setup star rating selection functionality

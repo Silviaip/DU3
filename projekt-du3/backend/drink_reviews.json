@@ -433,14 +433,15 @@
     }
   },
   {
+    "type": "drink",
     "idDrink": "178311",
     "name": "Broadside",
-    "rating": 3.1,
-    "votes": 173,
+    "rating": 5,
+    "votes": 1,
     "review": {
-      "reviewer": "Oscar D.",
-      "date": "2024-11-06",
-      "text": "Helt okej – varken toppen eller botten."
+      "reviewer": "You",
+      "date": "2025-06-01",
+      "text": "sdf"
     }
   },
   {
