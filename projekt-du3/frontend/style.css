@@ -353,6 +353,7 @@ ul, ol {
   transition: all 0.3s ease;
   flex: 1;
   text-align: center;
+  
 }
 
 .tab:hover {
@@ -362,6 +363,7 @@ ul, ol {
 .tab.active {
   background: #4CAF50;
   color: white;
+  
 }
 
 .tab-content {
@@ -371,6 +373,7 @@ ul, ol {
 
 .tab-content.active {
   display: block;
+  width: 80vw;
 }
 
 @keyframes fadeIn {
