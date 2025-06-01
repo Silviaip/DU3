@@ -56,76 +56,121 @@ async function getRandomDrink() {
 async function getMealRatings() {
   try {
     const text = await Deno.readTextFile(mealRatingsPath);
-    return JSON.parse(text);
+    const meals = JSON.parse(text);
+
+    // Lägg till rating i varje review
+    meals.forEach(meal => {
+      if (meal.reviews && meal.rating) {
+        meal.reviews.forEach(review => {
+          if (typeof review.rating === 'undefined') {
+            review.rating = meal.rating; // Kopiera genomsnittsbetyget till varje review (eller sätt ett annat värde)
+          }
+        });
+      }
+    });
+
+    return meals;
   } catch {
     return [];
   }
 }
 
+
 async function getDrinkRatings() {
   try {
     const text = await Deno.readTextFile(drinkRatingsPath);
-    return JSON.parse(text);
+    const drinks = JSON.parse(text);
+
+    drinks.forEach(drink => {
+      if (drink.reviews && typeof drink.rating === 'number') {
+        drink.reviews.forEach(review => {
+          if (typeof review.rating === 'undefined') {
+            review.rating = drink.rating;
+          }
+        });
+      }
+    });
+
+    return drinks;
   } catch {
     return [];
   }
 }
 
 async function getAllReviews() {
+  const mealReviews = await getMealRatings();
+  const drinkReviews = await getDrinkRatings();
+
+  const combined = [
+    ...mealReviews.map(item => ({ ...item, type: 'meal' })),
+    ...drinkReviews.map(item => ({ ...item, type: 'drink' }))
+  ];
+
+  await Deno.writeTextFile(allReviewsPath, JSON.stringify(combined, null, 2));
+  return combined;
+}
+async function updateAllReviewsFile() {
   try {
-    const text = await Deno.readTextFile(allReviewsPath);
-    return JSON.parse(text);
-  } catch {
-    // If all_reviews.json doesn't exist, combine from meal and drink reviews
     const mealReviews = await getMealRatings();
     const drinkReviews = await getDrinkRatings();
-    
+
     const combined = [
-      ...mealReviews.map(review => ({
-        ...review,
-        type: 'meal'
-      })),
-      ...drinkReviews.map(review => ({
-        ...review,
-        type: 'drink'
-      }))
+      ...mealReviews.map(item => ({ ...item, type: 'meal' })),
+      ...drinkReviews.map(item => ({ ...item, type: 'drink' }))
     ];
-    
-    // Save combined reviews for future use
+
     await Deno.writeTextFile(allReviewsPath, JSON.stringify(combined, null, 2));
-    return combined;
+  } catch (error) {
+    console.error("Failed to update all reviews file:", error);
   }
 }
+
 
 async function saveReview(review, isMeal = true) {
   const path = isMeal ? mealRatingsPath : drinkRatingsPath;
-  let reviews = [];
+  let reviewsData = [];
 
   try {
     const text = await Deno.readTextFile(path);
-    reviews = JSON.parse(text);
+    reviewsData = JSON.parse(text);
   } catch {
-    reviews = [];
+    reviewsData = [];
   }
 
-  // Check if review for this item already exists
-  const existingIndex = reviews.findIndex(r => 
-    (isMeal ? r.idMeal : r.idDrink) === (isMeal ? review.idMeal : review.idDrink)
-  );
+  const idKey = isMeal ? "idMeal" : "idDrink";
+  const itemId = review[idKey];
 
-  if (existingIndex >= 0) {
-    // Update existing review
-    reviews[existingIndex] = review;
-  } else {
-    // Add new review
-    reviews.push(review);
+  let item = reviewsData.find(item => item[idKey] === itemId);
+
+  if (!item) {
+    item = {
+      [idKey]: itemId,
+      type: isMeal ? "meal" : "drink",
+      name: review.name || "",
+      reviews: []
+    };
+    reviewsData.push(item);
   }
 
-  await Deno.writeTextFile(path, JSON.stringify(reviews, null, 2));
-  
-  // Update combined reviews file
-  await getAllReviews();
+  if (!Array.isArray(item.reviews)) {
+    item.reviews = [];
+  }
+
+  item.reviews.push({
+    reviewer: review.review.reviewer,
+    date: review.review.date,
+    text: review.review.text,
+    rating: review.rating
+  });
+
+  await Deno.writeTextFile(path, JSON.stringify(reviewsData, null, 2));
+
+  // ✅ Uppdatera all_reviews.json
+  await updateAllReviewsFile();
 }
+
+
+
 
 // Server
 serve(async (req) => {

@@ -32,7 +32,6 @@
     console.error("Kunde inte ladda drink:", err);
   }
 }); */
-
 document.getElementById("nightBtn").addEventListener("click", async () => {
   try {
     // Hämta slumpmässig dryck från Deno-servern
@@ -60,7 +59,7 @@ document.getElementById("nightBtn").addEventListener("click", async () => {
       ${review ? `
         <h3>Recensioner</h3>
         <p><strong>Betyg:</strong> ${review.rating} (${review.votes} röster)</p>
-        ${Array.isArray(review.review) ? review.review.map(r => `
+        ${Array.isArray(review.reviews) ? review.reviews.map(r => `
           <div class="review">
             <p><strong>${r.reviewer}</strong> (${r.date})</p>
             <p>${r.text}</p>
