@@ -127,41 +127,7 @@ header p {
 
   background-color: white;
 }
-/* Dropdown styles */
-#account_dropdown {
-  position: relative;
-}
 
-#dropdown_button {
-  background-color: #27ae60;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-}
-
-.dropdown {
-  position: absolute;
-  top: 45px;
-  right: 0;
-  background: white;
-  border: 1px solid #ccc;
-  width: 150px;
-  border-radius: 5px;
-  z-index: 999;
-}
-
-.dropdown a {
-  display: block;
-  padding: 10px;
-  color: black;
-  text-decoration: none;
-}
-
-.dropdown a:hover {
-  background-color: #f1f1f1;
-}
 
 .hidden {
   display: none;
