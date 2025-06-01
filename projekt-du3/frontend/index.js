@@ -4,6 +4,7 @@
 import { fetchTopMeals } from './top_meals.js';
 import { fetchTopDrinks } from './top_drinks.js';
 import { User } from './klass.js';
+const currentUser = new User();
 
 
 // Global variables to track current items and ratings

@@ -4827,5 +4827,17 @@
       "date": "2025-06-01",
       "text": "angel face 2"
     }
+  },
+  {
+    "type": "drink",
+    "idDrink": "67890",
+    "name": "Test Drink",
+    "rating": 3.8,
+    "votes": 1,
+    "review": {
+      "reviewer": "TestUser",
+      "date": "2025-06-01T18:54:21.790Z",
+      "text": "Detta är en testrecension för drink."
+    }
   }
 ]

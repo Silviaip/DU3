@@ -14,5 +14,13 @@
   {
     "username": "hejhej",
     "password": "hej"
+  },
+  {
+    "username": "testuser_1748804061790",
+    "password": "testpassword123"
+  },
+  {
+    "username": "duplicate_user",
+    "password": "password123"
   }
 ]
