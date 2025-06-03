@@ -348,11 +348,14 @@ function displayReviews(container, reviews, type) {
             reviewDate = review.review.date;
         }
         
+       
         let reviewText = 'No comment provided';
-        if (review.review && review.review.text) {
-            reviewText = review.review.text;
+        if (review.text) {
+         reviewText = review.text;  // ← Add this for direct text property
+        } else if (review.review && review.review.text) {
+         reviewText = review.review.text;
         } else if (review.review && typeof review.review === 'string') {
-            reviewText = review.review;
+        reviewText = review.review;
         }
         
         reviewElement.innerHTML = '<div class="review-header">' +
