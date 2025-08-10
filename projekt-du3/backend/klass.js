@@ -1,4 +1,4 @@
-export class User {
+/*export class User {
   constructor(username, password) {
     this.username = username;
     this.password = password;
@@ -42,7 +42,7 @@ export class User {
     return data;
   }
 }
-
+*/
 export class RandomFetcher {
   constructor() {
     this.drinkAPI = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
