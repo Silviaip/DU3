@@ -1,12 +1,9 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 
 
-const RANDOM_MEAL_URL    = "https://www.themealdb.com/api/json/v1/1/random.php";
-const LOOKUP_MEAL_URL    = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
 const RANDOM_DRINK_URL   = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 const templatePath       = "../frontend/index.html";
 const drinkRatingsPath   = "drink_reviews.json";
-const mealRatingsPath    = "meal_reviews.json";
 const allReviewsPath     = "all_reviews.json";
 
 const corsHeaders = {
@@ -148,48 +145,7 @@ serve(async (req) => {
 
   console.log(`${req.method} ${pathname}`);
   
-  if (req.method === "OPTIONS") {
-    return new Response(null, { headers: corsHeaders });
-  }
 
-  if (req.method === "OPTIONS") {
-    return new Response(null, { headers: corsHeaders });
-  }
-
-   if (req.method === "POST" && pathname === "/user") { // eget api
-    try {
-      const { username, password } = await req.json();
-
-      if (!username || !password) {
-        return new Response(
-          JSON.stringify({ error: "Både användarnamn och lösenord krävs." }),
-          { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-        );
-      }
-
-      const users = await readUsers();
-
-      if (users.some(u => u.username === username)) {
-        return new Response(
-          JSON.stringify({ error: "Användarnamnet är redan taget." }),
-          { status: 409, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-        );
-      }
-
-      users.push({ username, password });
-      await writeUsers(users);
-
-      return new Response(
-        JSON.stringify({ message: "Användare skapad!" }),
-        { status: 201, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    } catch (err) {
-      return new Response(
-        JSON.stringify({ error: "Ogiltig förfrågan." }),
-        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    }
-  }
 
   // Handle POST requests for adding reviews
   if (req.method === "POST" && pathname === "/add-review") { // eget api

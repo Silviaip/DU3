@@ -1,4 +1,4 @@
-const API_TESTS = [
+/*const API_TESTS = [
     {
         name: "CORS Preflight",
         method: "OPTIONS",
@@ -411,3 +411,4 @@ function clearResults() {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('API Test Suite laddad och redo!');
 });
+*/

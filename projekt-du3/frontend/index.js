@@ -446,16 +446,7 @@ function submitMealReview(rating) {
         }
         return response.json();
     })
-    .then(function(result) {
-        // Add review to display immediately
-        addReviewToDisplay('meal', reviewData);
-        
-        // Reset rating after submission
-        resetMealRating();
-        
-        // Show confirmation
-        alert('Your review has been submitted. Thank you!');
-    })
+   
     .catch(function(error) {
         console.error('Error submitting review:', error);
         alert('Network error. Please try again.');
