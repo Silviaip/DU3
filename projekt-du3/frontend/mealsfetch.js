@@ -6,7 +6,7 @@ document.getElementById("fetchMealBtn").addEventListener("click", async () => {
     const meal = await res.json();
 
     // Hämta alla måltidsrecensioner via API
-    const ratingsRes = await fetch("/meal-reviews"); // ändra till rätt endpoint om den är annorlunda
+    const ratingsRes = await fetch("/meal_reviews.json"); // ändra till rätt endpoint om den är annorlunda
     if (!ratingsRes.ok) throw new Error(`HTTP ${ratingsRes.status} vid hämtning av recensioner`);
     const allRatings = await ratingsRes.json();
 

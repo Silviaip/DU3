@@ -682,14 +682,15 @@
     }
   },
   {
+    "type": "meal",
     "idMeal": "52860",
     "name": "Chocolate Raspberry Brownies",
-    "rating": 3.3,
-    "votes": 226,
+    "rating": 4,
+    "votes": 1,
     "review": {
-      "reviewer": "Camilla E.",
-      "date": "2023-12-20",
-      "text": "Neutral upplevelse, varken bra eller dålig."
+      "reviewer": "You",
+      "date": "2025-08-18",
+      "text": "hejhejhej"
     }
   },
   {
@@ -858,14 +859,15 @@
     }
   },
   {
+    "type": "meal",
     "idMeal": "52977",
     "name": "Corba",
-    "rating": 1,
-    "votes": 480,
+    "rating": 4,
+    "votes": 1,
     "review": {
-      "reviewer": "Daniel Z.",
-      "date": "2024-07-20",
-      "text": "Detta var inte gott."
+      "reviewer": "You",
+      "date": "2025-08-18",
+      "text": "hejhejhej"
     }
   },
   {
